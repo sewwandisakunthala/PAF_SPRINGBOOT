@@ -51,5 +51,25 @@ public class CommentController {
         return new ResponseEntity<>(newComment, HttpStatus.CREATED);
     }
     
+    /**
+     * Edit a comment
+     * 
+     * @param commentId The comment ID
+     * @param userId The user ID (from auth token in a real app)
+     * @param commentRequest Request body containing updated text
+     * @return The updated comment
+     */
+    @PutMapping("/comments/{commentId}")
+    public ResponseEntity<Comment> editComment(
+            @PathVariable String commentId,
+            @RequestParam String userId, // In a real app, get from auth token
+            @RequestBody Map<String, String> commentRequest) {
+        
+        String updatedText = commentRequest.get("text");
+        Comment updatedComment = commentService.editComment(commentId, userId, updatedText);
+        
+        return ResponseEntity.ok(updatedComment);
+    }
+    
     
 }
