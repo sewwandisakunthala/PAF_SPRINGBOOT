@@ -93,5 +93,15 @@ public class CommentController {
         return ResponseEntity.ok(response);
     }
     
-    
+    /**
+     * Get all comments for a post
+     * 
+     * @param postId The post ID
+     * @return List of comments
+     */
+    @GetMapping("/posts/{postId}/comments")
+    public ResponseEntity<List<Comment>> getCommentsByPostId(@PathVariable String postId) {
+        List<Comment> comments = commentService.getCommentsByPostId(postId);
+        return ResponseEntity.ok(comments);
+    }
 }
