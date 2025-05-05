@@ -71,5 +71,27 @@ public class CommentController {
         return ResponseEntity.ok(updatedComment);
     }
     
+    /**
+     * Delete a comment
+     * 
+     * @param commentId The comment ID
+     * @param userId The user ID (from auth token in a real app)
+     * @return Success message
+     */
+    @DeleteMapping("/comments/{commentId}")
+    public ResponseEntity<Map<String, Object>> deleteComment(
+            @PathVariable String commentId,
+            @RequestParam String userId) { // In a real app, get from auth token
+        
+        commentService.deleteComment(commentId, userId);
+        
+        Map<String, Object> response = new HashMap<>();
+        response.put("success", true);
+        response.put("message", "Comment deleted successfully");
+        response.put("commentId", commentId);
+        
+        return ResponseEntity.ok(response);
+    }
+    
     
 }
