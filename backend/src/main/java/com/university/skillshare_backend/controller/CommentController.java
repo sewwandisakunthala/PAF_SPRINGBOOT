@@ -31,5 +31,25 @@ public class CommentController {
         this.commentService = commentService;
     }
     
+    /**
+     * Add a comment to a post
+     * 
+     * @param postId The post ID
+     * @param userId The user ID (from auth token in a real app)
+     * @param commentRequest Request body containing text
+     * @return The created comment
+     */
+    @PostMapping("/posts/{postId}/comments")
+    public ResponseEntity<Comment> addComment(
+            @PathVariable String postId,
+            @RequestParam String userId, // In a real app, get from auth token
+            @RequestBody Map<String, String> commentRequest) {
+        
+        String commentText = commentRequest.get("text");
+        Comment newComment = commentService.addComment(postId, userId, commentText);
+        
+        return new ResponseEntity<>(newComment, HttpStatus.CREATED);
+    }
+    
     
 }
