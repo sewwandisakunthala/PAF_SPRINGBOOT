@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import com.university.skillshare_backend.model.Comment;
 
+//create repository for comments
+
 @Repository
 public interface CommentRepository extends MongoRepository<Comment, String> {
     
