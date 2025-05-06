@@ -64,6 +64,7 @@ export const connectWebSocket = (postId, callbacks = {}) => {
  * 
  * @returns {boolean} - True if connected, false otherwise
  */
+
 export const isConnected = () => {
   return stompClient && stompClient.connected;
 };
