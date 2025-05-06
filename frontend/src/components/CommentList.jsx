@@ -41,6 +41,7 @@ const CommentList = ({ postId, userId, initialComments = [] }) => {
     if (initialComments && initialComments.length > 0) {
       const uniqueComments = [];
       const seenIds = new Set();
+
       
       // First add all initialComments
       initialComments.forEach(comment => {
@@ -62,6 +63,7 @@ const CommentList = ({ postId, userId, initialComments = [] }) => {
     }
   }, [initialComments]);
 
+
   // Handle comment deletion
   const handleDelete = (commentId) => {
     setComments(prev => prev.filter(comment => comment.id !== commentId));
@@ -78,6 +80,7 @@ const CommentList = ({ postId, userId, initialComments = [] }) => {
       return prev;
     });
   };
+  
   
   // Add a new comment to the list
   const addComment = (newComment) => {
