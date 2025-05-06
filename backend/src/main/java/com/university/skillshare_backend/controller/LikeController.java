@@ -27,6 +27,8 @@ public class LikeController {
     public LikeController(LikeService likeService) {
         this.likeService = likeService;
     }
+
+
     
     /**
      * Add a like to a post
@@ -50,6 +52,7 @@ public class LikeController {
         return ResponseEntity.ok(response);
     }
     
+
     /**
      * Remove a like from a post
      * 
@@ -71,6 +74,7 @@ public class LikeController {
         
         return ResponseEntity.ok(response);
     }
+    
     
     /**
      * Get the current like count for a post
