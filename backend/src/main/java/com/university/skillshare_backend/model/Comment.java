@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 
+// careate collection for comments
+
 @Data
 @Document(collection = "comments")
 public class Comment {

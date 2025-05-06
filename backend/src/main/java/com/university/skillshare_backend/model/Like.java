@@ -8,6 +8,7 @@ import java.util.Date;
 @Data
 @Document(collection = "likes")
 public class Like {
+    
     @Id
     private String id;
     private String postId;
