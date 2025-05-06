@@ -21,7 +21,9 @@ const CommentItem = ({ comment, userId, onDelete, onUpdate }) => {
     try {
       await deleteComment(comment.id, userId);
       if (onDelete) {
+
         onDelete(comment.id);
+        
       }
     } catch (error) {
       console.error('Error deleting comment:', error);

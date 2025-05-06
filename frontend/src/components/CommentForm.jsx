@@ -31,6 +31,7 @@ const CommentForm = ({ postId, userId, onCommentAdded, commentId, initialText, i
         response = await addComment(postId, userId, text);
         setText('');
       }
+      
 
       if (response && response.id && onCommentAdded) {
         onCommentAdded(response);
