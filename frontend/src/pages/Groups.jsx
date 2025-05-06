@@ -41,6 +41,7 @@ const Groups = () => {
     }
   };
 
+  
   const fetchUserGroups = async () => {
     if (!currentUser) return;
     try {
