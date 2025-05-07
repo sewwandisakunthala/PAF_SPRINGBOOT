@@ -12,5 +12,4 @@ public class SkillshareBackendApplication {
 		SpringApplication.run(SkillshareBackendApplication.class, args);
 		System.out.println("Skillshare backend is running!");
 	}
-
 }
