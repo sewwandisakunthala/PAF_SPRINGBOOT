@@ -9,5 +9,4 @@ class SkillshareBackendApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
