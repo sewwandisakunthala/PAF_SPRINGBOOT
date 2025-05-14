@@ -43,7 +43,7 @@ public class PostController implements WebMvcConfigurer {
     }
     
     /**
-     * Create a new post comment
+     * Create a new post comment section
      * 
      * @param userId User ID
      * @param title Post title
